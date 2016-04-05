@@ -47,9 +47,10 @@ in working with {{page.domain %}} data in {{page.topic %}}.
 
 
 ## Data
-
+<!--
 Data files for the lesson are available here: ({{page.dataurl %}})[{{page.dataurl %}}]
-
+-->
+Data files for the lesson are available here: (https://github.com/JohnRMoreau/2016-04-07-FederalReserveBoard/raw/gh-pages/data/gapminder-sql-data.zip)[https://github.com/JohnRMoreau/2016-04-07-FederalReserveBoard/raw/gh-pages/data/gapminder-sql-data.zip]
 
 ### Requirements
 
