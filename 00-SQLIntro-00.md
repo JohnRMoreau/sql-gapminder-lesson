@@ -1,8 +1,15 @@
-Data Carpentry Databases using SQL
-===================
+---
+layout: lesson
+root: .
+title: Data Carpentry Databases using SQL
+minutes: 
+---
 
-Setup
------
+
+
+
+## Setup
+
 
 _Note: this should have been done by participants before the start of the workshop._
 
@@ -14,9 +21,9 @@ Manager -> Install -> Restart now**
    Manager icon to one of the empty menu squares on the right, Exit Customize**
 5. Open SQLite Manager: **Menu -> SQLite Manager**
 
+--------------------------------------------------------------------
+## Relational databases
 
-Relational databases
---------------------
 
 * Relational databases store data in tables with fields (columns) and records
   (rows)
@@ -25,8 +32,8 @@ Relational databases
 * Queries let us look up data or make calculations based on columns
 
 
-Why use relational databases
-----------------------------
+## Why use relational databases
+
 
 * Data separate from analysis.
   * No risk of accidentally changing data when analyzing it
@@ -38,8 +45,8 @@ Why use relational databases
   do similar things in R and Python
 
 
-Database Management Systems
----------------------------
+## Database Management Systems
+
 
 There are a number of different database management systems for working with
 relational data. We're going to use SQLite today, but basically everything we
@@ -49,8 +56,8 @@ details of exactly how to import and export data and the
 [details of data types](#datatypediffs).
 
 
-Database Design
----------------
+## Database Design
+
 
 1. Every row-column combination contains a single *atomic* value, i.e., not
    containing parts we might want to work with separately.
@@ -59,10 +66,9 @@ Database Design
      * Split into separate tables with one table per class of information
 	   * Needs an identifier in common between tables – shared column - to
        reconnect (foreign key).
+------------------------------------------------------------
 
-
-Introduction to SQLite Manager
-------------------------------
+## Introduction to SQLite Manager
 
 Let's all open the database we downloaded in SQLite Manager by clicking on the
 open file icon.
@@ -76,16 +82,16 @@ and search tab in the right hand section of the screen.
 If we want to write a query, we click on the Execute SQL tab.
 
 
-Dataset Description
--------------------
+## Dataset Description
+
 
 The dataset for this lesson is cleaned Gapminder data from Jennifer Bryan
 https://github.com/jennybc/gapminder
 
 
 
-Import
-------
+## Import
+
 
 1. Download the two files in a zip file from https://www.dropbox.com/s/vh03r4ayzzc865c/gapminder-sql-data.zip?dl=0
 1. Start a New Database **Database -> New Database**
@@ -121,9 +127,10 @@ This is a very valuable feature of SQL.
 
 You can also use this same approach to append new data to an existing table.
 
+------------------------------
 
-Basic queries
--------------
+##  Basic queries
+
 
 Let's start by using the **surveys** table.
 Here we have data on all the countries and years
@@ -178,14 +185,15 @@ We can also rename the column using AS
 
     SELECT country, year, ROUND(gdpPercap, 2) AS gdp FROM surveys;
 
-> ## Challenge
+> ### Challenge
 >
 > Write a query that returns the country, year, population in millions of people,
 > rounded to two decimal places and life expectancy rounded to one decimal place.
 > As a bonus rename the columns.
 
-Filtering
----------
+
+### Filtering
+
 
 Databases can also filter data – selecting only the data meeting certain
 criteria.  For example, let’s say we only want data for the country
@@ -228,15 +236,15 @@ _Iceland_, and two other island countries _Madagascar_ and _Dominican Republic_ 
 > How many records are there if you just look at the year 2007?
 
 
-Saving & Exporting queries
---------------------------
+## Saving & Exporting queries
+
 
 * Exporting:  **Actions** button and choosing **Save Result to File**.
 * Save: **View** drop down and **Create View**
 
+----------------------------------------------------------------
+## Building more complex queries
 
-Building more complex queries
------------------------------
 
 Now, lets combine the above queries to get data for the 3 countries from
 the year 2000 on.  This time, let’s use IN as one way to make the query easier
@@ -256,8 +264,8 @@ subset of the data that you can easily see in a temporary database to practice
 your queries on before working on a larger or more complicated database.
 
 
-Sorting
--------
+### Sorting
+
 
 We can also sort the results of our queries by using ORDER BY.
 Let's now use our countries table and put them in order. Here instead
@@ -285,8 +293,8 @@ continent and then country.
 > the surveys table, sorted with the largest populations at the top.
 
 
-Order of execution
-------------------
+### Order of execution
+
 
 Another note for ordering. We don’t actually have to display a column to sort by
 it.  For example, let’s say we want to look at countries with population higher than
@@ -309,8 +317,7 @@ More on SQL order of execution
 
 
 
-Order of clauses
-----------------
+### Order of clauses
 
 The order of the clauses when we write a query is dictated by SQL: SELECT, FROM, WHERE, ORDER BY
 and we often write each of them on their own line for readability.
@@ -327,9 +334,9 @@ and we often write each of them on their own line for readability.
 
 **BREAK**
 
-
-Aggregation
 -----------
+## Aggregation
+
 
 Aggregation allows us to combine results by grouping records based on value and
 calculating combined values in groups.
@@ -389,9 +396,9 @@ ordered by the count
     GROUP BY continent
     ORDER BY COUNT(continent)
 
+-------------------------
+## Joins
 
-Joins
------
 
 To combine data from two tables we use the SQL `JOIN` command, which comes after
 the `FROM` command.
@@ -432,9 +439,9 @@ combine things as a final challenge.
 > Bonus: Do this just for the year 1952 then for the year 2007
 
 
+--------------------
+## Aliases
 
-Aliases
--------
 
 As queries get more complex names can get long and unwieldy. To help make things
 clearer we can use aliases to assign new names to things in the query.
@@ -458,15 +465,15 @@ The `AS` isn't technically required, so you could do
 
 but using `AS` is much clearer so it's good style to include it.
 
-Adding data to existing tables
-------------------------------
+### Adding data to existing tables
+
 
 * Browse & Search -> Add
 * Enter data into a csv file and append
 
 
-Other database management systems
----------------------------------
+### Other database management systems
+
 
 * Access or Filemaker Pro
     * GUI
@@ -476,9 +483,9 @@ Other database management systems
     * Multiple simultaneous users
 	* More difficult to setup and maintain
 
-
-Q & A on Database Design (review if time)
 -----------------------------------------
+## Q & A on Database Design (review if time)
+
 
 1. Order doesn't matter
 2. Every row-column combination contains a single *atomic* value, i.e., not

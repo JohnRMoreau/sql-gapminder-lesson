@@ -1,5 +1,10 @@
-Software Carpentry SQL Cheat Sheet
-==================================
+---
+layout: lesson
+root: .
+title: Data Carpentry SQL Cheat Sheet
+minutes: 
+---
+
 
 Basic Queries
 -------------
