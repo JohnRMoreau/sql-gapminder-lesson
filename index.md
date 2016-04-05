@@ -1,13 +1,13 @@
 ---
 layout: lesson
 root: .
-lastupdated: Month Day, Year
-contributors: ["First Last", "First Last", "Pls Add Others"]
-maintainers: ["First Last", "First Last"]
-domain: Domain Name
-topic: Topic
-software:
-dataurl:
+lastupdated: April 4, 2016
+contributors: ["Tracy Teal", "John Moreau", "et al"]
+maintainers: ["TBD"]
+domain: "Economics and Business"
+topic: SQL
+software: SQL
+dataurl: https://github.com/JohnRMoreau/2016-04-07-FederalReserveBoard/raw/gh-pages/data/gapminder-sql-data.zip
 status: Under Development
 ---
 
@@ -42,8 +42,8 @@ in working with {{page.domain %}} data in {{page.topic %}}.
 ## Lessons:
 
 
-1. [Lesson 00 Name](00-lesson-00-name.html)
-2. [Lesson 01 Name](01-lesson-01-name.html)
+1. [SQL Introduction](00-SQLIntro-00.html)
+2. [SQL Cheat Sheet](sql_cheat_sheet.html)
 
 
 ## Data
